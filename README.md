@@ -9,8 +9,8 @@ supports this path:
 > Recognize the problem → understand the human-led solution → trust the
 > independent positioning → understand the service is paid → call.
 
-> **Before launch, read [`LAUNCH_CHECKLIST.md`](LAUNCH_CHECKLIST.md).** The
-> phone number is a placeholder and several business details are still to be
+> **Before launch, read [`LAUNCH_CHECKLIST.md`](LAUNCH_CHECKLIST.md).** Several
+> business details (prices, hours, refund terms, email) are still to be
 > supplied.
 
 ---
@@ -46,7 +46,7 @@ npm run dev                  # http://localhost:3000
 | `npm run build` | Create a production build                     |
 | `npm run start` | Serve the production build locally            |
 
-## Replacing the phone number (required before launch)
+## Changing the phone number
 
 The number appears in the header, hero, every section CTA, the mobile call
 bar, the contact page, the 404 page, and the footer — but it is defined in
@@ -55,22 +55,21 @@ bar, the contact page, the 404 page, and the footer — but it is defined in
 ```ts
 // src/config/site.ts
 export const phone = {
-  display: "+1 (800) 555-0147",  // shown on the page
-  e164: "+18005550147",          // used for the tel: link
-  isPlaceholder: true,           // set to false once the real number is verified
+  display: "+1 (888) 882-5152",  // shown on the page
+  e164: "+18888825152",          // used for the tel: link
+  isPlaceholder: false,          // true only for a non-working preview number
 };
 ```
 
-1. Replace `display` and `e164` with the real business number.
+1. Update `display` and `e164`.
 2. Call it from a mobile phone and confirm it reaches the business.
-3. Set `isPlaceholder: false`. This removes the yellow "Preview site" notice
-   at the top of every page and silences the warning printed during
-   `npm run build`.
+3. Keep `isPlaceholder: false`. Setting it to `true` shows a yellow "Preview
+   site" notice on every page and prints a warning during `npm run build`.
 
 To confirm nothing is hard-coded elsewhere:
 
 ```bash
-grep -rn "555-0147\|18005550147" src --include=*.ts --include=*.tsx
+grep -rn "882-5152\|18888825152" src --include=*.ts --include=*.tsx
 ```
 
 Only `src/config/site.ts` should match.
@@ -207,7 +206,7 @@ Repository settings that must stay in place:
   carries the same domain.
 - **DNS:** apex `A` records to GitHub Pages (185.199.108.153, .109.153,
   .110.153, .111.153) and `AAAA` records (2606:50c0:8000::153 … 8003::153);
-  `www` as a `CNAME` to `blackbarry0002.github.io`.
+  `www` as a `CNAME` to `ap-333.github.io`.
 
 Indexing is controlled by `NEXT_PUBLIC_ALLOW_INDEXING` in the workflow's build
 step (currently `"false"`). Set it to `"true"` once the real phone number is

@@ -12,12 +12,12 @@ on-page marker.
 
 ## 1. Blockers — do not launch without these
 
-- [ ] **Real phone number.** Replace the placeholder `+1 (800) 555-0147` in
+- [x] **Real phone number.** `+1 (888) 882-5152` is set in
       `src/config/site.ts` (`display` and `e164`).
 - [ ] **Verify the number works**: call it from a mobile phone and a desktop
       softphone; confirm it reaches the business, not a carrier message.
-- [ ] Set `phone.isPlaceholder = false` (removes the yellow "Preview site"
-      banner and the build warning).
+- [x] `phone.isPlaceholder = false` (no "Preview site" banner or build
+      warning).
 - [ ] **Confirm the operating process matches the site's promises.** The site
       states, in several places, that:
   - the service and price are explained **before** any paid work begins;

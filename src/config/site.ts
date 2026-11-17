@@ -6,27 +6,23 @@
  */
 
 /* =============================================================================
- * !!!  PLACEHOLDER PHONE NUMBER — REPLACE AND VERIFY BEFORE DEPLOYMENT  !!!
+ * BUSINESS PHONE NUMBER
  * -----------------------------------------------------------------------------
- * +1 (800) 555-0147 is a NON-OPERATIONAL placeholder (555-01XX numbers are
- * reserved for fictional use). It is NOT a working business line.
- *
- * Before launch:
- *   1. Replace `display` and `e164` below with the real business number.
- *   2. Call the number from a mobile phone and confirm it reaches the business.
- *   3. Set `isPlaceholder` to `false`. This removes the on-site "preview"
- *      notice and silences the production build warning in next.config.ts.
- *
  * Every phone CTA, the header, the mobile call bar, the footer and the
  * contact page read from this object. Do not hard-code the number elsewhere.
+ *
+ * If the number changes: update `display` and `e164`, then call it from a
+ * mobile phone to confirm it reaches the business. Set `isPlaceholder` to
+ * `true` only for a non-working preview number — it shows an on-site notice
+ * and a build warning.
  * ========================================================================== */
 export const phone = {
   /** Human-readable format shown on the page. */
-  display: "+1 (800) 555-0147",
+  display: "+1 (888) 882-5152",
   /** E.164 format used for the `tel:` link. Digits only, leading "+". */
-  e164: "+18005550147",
-  /** Keep `true` until a real, verified number is configured. */
-  isPlaceholder: true,
+  e164: "+18888825152",
+  /** `true` only while the number is a non-working placeholder. */
+  isPlaceholder: false,
 } as const;
 
 export const telHref = `tel:${phone.e164}`;
