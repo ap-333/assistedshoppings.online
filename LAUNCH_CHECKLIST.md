@@ -85,7 +85,7 @@ In `src/config/site.ts → business`:
       `assistedshoppings.online` domain with HTTPS.
 - [ ] Decide on `www` vs apex and redirect one to the other; keep
       `site.url` consistent.
-- [ ] Set `NEXT_PUBLIC_ALLOW_INDEXING=true` in **production only**, rebuild,
+- [x] Set `NEXT_PUBLIC_ALLOW_INDEXING=true` in **production only**, rebuild,
       and verify `https://assistedshoppings.online/robots.txt` allows
       crawling and lists the sitemap.
 - [ ] Submit `https://assistedshoppings.online/sitemap.xml` in Google Search

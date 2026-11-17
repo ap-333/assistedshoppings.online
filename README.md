@@ -209,8 +209,8 @@ Repository settings that must stay in place:
   `www` as a `CNAME` to `ap-333.github.io`.
 
 Indexing is controlled by `NEXT_PUBLIC_ALLOW_INDEXING` in the workflow's build
-step (currently `"false"`). Set it to `"true"` once the real phone number is
-live.
+step (currently `"true"`, so search engines may crawl the site). Set it to
+`"false"` to hide the site from search results.
 
 Static hosting limits: no server code, no custom HTTP headers (security
 headers would need a CDN such as Cloudflare in front of Pages), and the
